@@ -26,11 +26,11 @@ namespace MissingLinq
         }
 
         /// <summary>
-        /// Appends an item to a given set.
+        /// Appends an set to a given set.
         /// </summary>
         /// <typeparam name="T">The element type</typeparam>
         /// <param name="enumerable">The set to be appended to.</param>
-        /// <param name="newItem">The new item to append.</param>
+        /// <param name="newItemSet">The new item set to append.</param>
         /// <returns>Returns the set with the appended item.</returns>
         public static IEnumerable<T> Append<T>(this IEnumerable<T> enumerable, IEnumerable<T> newItemSet)
         {
