@@ -26,7 +26,7 @@ namespace MissingLinq
         }
 
         /// <summary>
-        /// Appends an set to a given set.
+        /// Appends a set to a given set.
         /// </summary>
         /// <typeparam name="T">The element type</typeparam>
         /// <param name="enumerable">The set to be appended to.</param>
@@ -128,6 +128,40 @@ namespace MissingLinq
                 if (currentEnumerator.Current.Equals(otherEnumerator.Current) == false) return false;
             }
             return true;
+        }
+
+        /// <summary>
+        /// Prepends an item to a given set.
+        /// </summary>
+        /// <typeparam name="T">The element type</typeparam>
+        /// <param name="enumerable">The set to be prepended to.</param>
+        /// <param name="newItem">The new item to prepended.</param>
+        /// <returns>Returns the set with the prepended item.</returns>
+        public static IEnumerable<T> Prepend<T>(this IEnumerable<T> enumerable, T newItem)
+        {
+            if (enumerable == null) yield return newItem;
+            yield return newItem;
+            foreach (T item in enumerable) yield return item;
+        }
+
+        /// <summary>
+        /// Prepends a set to a given set.
+        /// </summary>
+        /// <typeparam name="T">The element type</typeparam>
+        /// <param name="enumerable">The set to be prepended to.</param>
+        /// <param name="newItemSet">The new item set to prepended.</param>
+        /// <returns>Returns the set with the prepended item set.</returns>
+        public static IEnumerable<T> Prepend<T>(this IEnumerable<T> enumerable, IEnumerable<T> newItemSet)
+        {
+            if (enumerable == null && newItemSet == null) throw new InvalidOperationException("Cannot prepend nothing to nothing.");
+            if (newItemSet != null)
+            {
+                foreach (T newItem in newItemSet) yield return newItem;
+            } 
+            if (enumerable != null)
+            {
+                foreach (T item in enumerable) yield return item;
+            }
         }
     }
 }
