@@ -12,6 +12,40 @@ namespace MissingLinq
     public static class EnumerableExtensions
     {
         /// <summary>
+        /// Appends an item to a given set.
+        /// </summary>
+        /// <typeparam name="T">The element type</typeparam>
+        /// <param name="enumerable">The set to be appended to.</param>
+        /// <param name="newItem">The new item to append.</param>
+        /// <returns>Returns the set with the appended item.</returns>
+        public static IEnumerable<T> Append<T>(this IEnumerable<T> enumerable, T newItem)
+        {
+            if (enumerable == null) yield return newItem;
+            foreach (T item in enumerable) yield return item;
+            yield return newItem;
+        }
+
+        /// <summary>
+        /// Appends an item to a given set.
+        /// </summary>
+        /// <typeparam name="T">The element type</typeparam>
+        /// <param name="enumerable">The set to be appended to.</param>
+        /// <param name="newItem">The new item to append.</param>
+        /// <returns>Returns the set with the appended item.</returns>
+        public static IEnumerable<T> Append<T>(this IEnumerable<T> enumerable, IEnumerable<T> newItemSet)
+        {
+            if (enumerable == null && newItemSet == null) throw new InvalidOperationException("Cannot append nothing to nothing.");
+            if (enumerable != null)
+            {
+                foreach (T item in enumerable) yield return item;
+            }
+            if (newItemSet != null)
+            {
+                foreach (T newItem in newItemSet) yield return newItem;
+            }
+        }
+
+        /// <summary>
         /// Returns the set of elements that are distinct based upon proximity.  Given a set { A, B, A, A, B, B, A }
         /// the returned result would be { A, B, A, B, A }.
         /// </summary>

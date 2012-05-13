@@ -10,6 +10,38 @@ namespace MissingLinqTests
     public class EnumerableUnitTests
     {
         [TestMethod]
+        public void AppendTests()
+        {
+            IEnumerable<int> expected;
+            IEnumerable<int> result = null;
+
+            // Test 1
+            result = result.Append(0);
+            expected = new int[] { 0 };
+            Assert.IsTrue(expected.Matches(result));
+
+            // Test 2
+            result = new int[] { 0, 1, 2 }.Append(3);
+            expected = new int[] { 0, 1, 2, 3 };
+            Assert.IsTrue(expected.Matches(result));
+
+            // Test 3
+            result = new int[] { 0, 1, 2, 5, 4, 9, 8, 7 }.Append(6).Append(3);
+            expected = new int[] { 0, 1, 2, 5, 4, 9, 8, 7, 6, 3 };
+            Assert.IsTrue(expected.Matches(result));
+
+            // Test 4
+            result = new int[] { 0, 1, 2, 5, 4, 9, 8, 7 }.Append(6).Append(3).Append(new int[] { 10, 11, 12 });
+            expected = new int[] { 0, 1, 2, 5, 4, 9, 8, 7, 6, 3, 10, 11, 12 };
+            Assert.IsTrue(expected.Matches(result));
+
+            // Test 5
+            result = new int[] { 0, 1, 2, 5, 4, 9, 8, 7 }.Append(6).Append(3).Append(new int[] { 10, 11, 12 }).Append(14).Append(new int[] { 13 });
+            expected = new int[] { 0, 1, 2, 5, 4, 9, 8, 7, 6, 3, 10, 11, 12, 14, 13 };
+            Assert.IsTrue(expected.Matches(result));
+        }
+
+        [TestMethod]
         public void DistinctUntilChangedTests()
         {
             int[] integerSet;
