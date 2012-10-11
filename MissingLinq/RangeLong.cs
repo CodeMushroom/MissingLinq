@@ -11,8 +11,6 @@ namespace MissingLinq
     /// </summary>
     public class RangeLong : IRange<long>
     {
-        #region Constructors
-
         /// <summary>
         /// Constructs a new range with the provided start and end points.
         /// </summary>
@@ -23,10 +21,6 @@ namespace MissingLinq
             this.Start = start;
             this.End = end;
         }
-
-        #endregion
-
-        #region Methods
 
         /// <summary>
         /// Gets the enumerator for the current range.
@@ -59,10 +53,6 @@ namespace MissingLinq
             return this.GetEnumerator();
         }
 
-        #endregion
-
-        #region Properties
-
         /// <summary>
         /// Gets or sets the starting point.
         /// </summary>
@@ -72,7 +62,5 @@ namespace MissingLinq
         /// Gets or sets the ending point.
         /// </summary>
         public long End { get; set; }
-
-        #endregion
     }
 }
