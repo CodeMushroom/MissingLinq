@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MissingLinq;
+using NUnit.Framework;
 
-namespace MissingLinqTests
+namespace MissingLinq.Tests
 {
-    [TestClass]
+    [TestFixture]
     public class EnumerableUnitTests
     {
-        [TestMethod]
+        [Test]
         public void AppendTests()
         {
             IEnumerable<int> expected;
@@ -41,7 +41,7 @@ namespace MissingLinqTests
             Assert.IsTrue(expected.Matches(result));
         }
 
-        [TestMethod]
+        [Test]
         public void DistinctUntilChangedTests()
         {
             int[] integerSet;

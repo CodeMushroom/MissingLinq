@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 11
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MissingLinq", "MissingLinq\MissingLinq.csproj", "{7D0E2DBE-5AA7-45B5-91EF-C51CD3DA56CE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MissingLinqTests", "MissingLinqTests\MissingLinqTests.csproj", "{FD995FE2-C2DB-4C5D-B01A-61270F232422}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MissingLinq.Tests", "MissingLinq.Tests\MissingLinq.Tests.csproj", "{FD995FE2-C2DB-4C5D-B01A-61270F232422}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
