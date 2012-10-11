@@ -15,6 +15,7 @@ namespace MissingLinq.Tests
         [TestCase(1, 10, 55)]
         [TestCase(100, 500, 120300)]
         [TestCase(1, 5000, 12502500)]
+        [TestCase(10, 1, 55)]
         public void TestSumNumberRanges(int start, int end, int expectedSum)
         {
             Assert.AreEqual(expectedSum, start.To(end).Sum());
