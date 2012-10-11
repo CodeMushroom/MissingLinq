@@ -43,7 +43,7 @@ namespace MissingLinq
             }
             else
             {
-                for (long i = Start; i <= End; i--)
+                for (long i = End; i >= Start; i--)
                 {
                     yield return i;
                 }
