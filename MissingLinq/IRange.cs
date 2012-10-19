@@ -21,5 +21,12 @@ namespace MissingLinq
         /// Gets or sets the ending point.
         /// </summary>
         T End { get; set; }
+
+        /// <summary>
+        /// Determines if the current range contains the specified element.
+        /// </summary>
+        /// <param name="element">The element to find inside the range.</param>
+        /// <returns>Returns whether or not the element is in the current range.</returns>
+        bool Contains(T element);
     }
 }

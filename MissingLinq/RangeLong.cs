@@ -23,6 +23,23 @@ namespace MissingLinq
         }
 
         /// <summary>
+        /// Determines if the current range contains the specified element.
+        /// </summary>
+        /// <param name="element">The element to find inside the range.</param>
+        /// <returns>Returns whether or not the element is in the current range.</returns>
+        public bool Contains(long element)
+        {
+            if (Start < End)
+            {
+                return element >= Start && element <= End;
+            }
+            else
+            {
+                return element >= End && element <= Start;
+            }
+        }
+
+        /// <summary>
         /// Gets the enumerator for the current range.
         /// </summary>
         /// <returns>Returns the enumerator for the current range.</returns>

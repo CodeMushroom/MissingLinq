@@ -105,6 +105,16 @@ namespace MissingLinq
         }
 
         /// <summary>
+        /// Determines whether or not the specified enumerable is null or empty.
+        /// </summary>
+        /// <param name="enumerable">The enumerable object to check.</param>
+        /// <returns>Returns true if the specified enumerable object is null or empty.</returns>
+        public static bool IsNullOrEmpty(this System.Collections.IEnumerable enumerable)
+        {
+            return enumerable == null || !enumerable.GetEnumerator().MoveNext();
+        }
+
+        /// <summary>
         /// Determines if two sets are the same.  The sets must also be in the same order.
         /// </summary>
         /// <typeparam name="T">The element type.</typeparam>
