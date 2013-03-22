@@ -125,7 +125,7 @@ namespace MissingLinq
             where T : IEquatable<T>
         {
             if (enumerable == null && other == null) return true;
-            if ((enumerable == null && other != null) || (enumerable != null && other == null)) return false;
+            if (enumerable == null || other == null) return false;
             if (ReferenceEquals(enumerable, other)) return true;
 
             var currentEnumerator = enumerable.GetEnumerator();
