@@ -20,7 +20,7 @@ namespace MissingLinq
         /// <returns>Returns the default value if the input is null.</returns>
         public static T Default<T>(this T? input, T defaultValue) where T : struct
         {
-            return input.HasValue ? input.Value : defaultValue;
+            return input.GetValueOrDefault(defaultValue);
         }
     }
 }
