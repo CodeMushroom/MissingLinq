@@ -7,3 +7,5 @@ TestResults
 
 # user settings
 *.v11.suo
+*.v12.suo
+MissingLinq.sln.ide/**
