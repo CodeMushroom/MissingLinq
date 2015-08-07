@@ -6,6 +6,5 @@ obj
 TestResults
 
 # user settings
-*.v11.suo
-*.v12.suo
+*.suo
 MissingLinq.sln.ide/**
