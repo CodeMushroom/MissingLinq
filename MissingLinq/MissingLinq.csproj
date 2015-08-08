@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AsyncEnumerableExtensions.cs" />
+    <Compile Include="AsyncStringExtensions.cs" />
     <Compile Include="EnumerableExtensions.cs" />
     <Compile Include="IRange.cs" />
     <Compile Include="NullableExtensions.cs" />
